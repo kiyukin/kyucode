@@ -1,0 +1,12 @@
+[
+  {"filename": "screenshot1.png", "description": "UI layout in main menu"},
+  {"filename": "screenshot2.png", "description": "Character movement in gameplay"},
+  {"filename": "screenshot3.png", "description": "In-game environment with NPCs"},
+  {"filename": "screenshot4.png", "description": "Scene at the fountain"},
+  {"filename": "screenshot5.png", "description": "Close-up of enemy character"},
+  {"filename": "screenshot6.png", "description": "Map view with various landmarks"},
+  {"filename": "screenshot7.png", "description": "Player's inventory screen"},
+  {"filename": "screenshot8.png", "description": "Settings menu overview"},
+  {"filename": "screenshot9.png", "description": "HUD during gameplay"},
+  {"filename": "screenshot10.png", "description": "Cutscene showing character dialogue"}
+]

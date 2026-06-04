@@ -1,0 +1,9 @@
+### Sample Bug Report
+**Title:** NPC Pathfinding Issue
+
+**Description:**
+The NPC continually rotates in place near the fountain instead of proceeding to its destination. There is a potential issue with pathfinding logic that may cause this behavior.
+
+**Observations:**
+- There appears to be a discrepancy in the minimap coordinates.
+- The NPC overlaps with the object next to the fountain.

@@ -1,0 +1,26 @@
+{
+  "projectName": "kyucode",
+  "engine": "Unity",
+  "mode": "mock",
+  "summary": "Analysis summary.",
+  "inputData": { 
+    "bugReport": "Detailed bug report here.",
+    "imageMetadata": {
+      "screenshot1": "description",
+      "screenshot2": "description"
+    }
+  },
+  "detectedBugs": [
+    {
+      "bugType": "UI Error",
+      "severity": "Major",
+      "confidence": 0.85,
+      "rootCauseCandidates": ["Collider issue"],
+      "reproductionSteps": ["Step 1","Step 2"],
+      "fixSuggestions": ["Check collider settings"]
+    }
+  ],
+  "agentResults": {},
+  "skillUsed": "kyucode-game-qa",
+  "futureUnityIntegration": "Planned changes here."
+}
