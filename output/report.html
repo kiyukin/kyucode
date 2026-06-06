@@ -307,22 +307,32 @@ body {
       <div class="image-card-header">
         <div>
           <h2>Screenshot 1</h2>
-          <p>bug_minimap_mismatch_01.png</p>
+          <p>test_animation_bug_10.png</p>
         </div>
-        <div class="pill">충돌 판정</div>
+        <div class="pill">미니맵 불일치</div>
       </div>
 
       <div class="screenshot-wrapper">
-        <img class="game-image" src="../data/screenshots/bug_minimap_mismatch_01.png" alt="bug_minimap_mismatch_01.png">
+        <img class="game-image" src="../data/screenshots/test_animation_bug_10.png" alt="test_animation_bug_10.png">
         
-            <div class="bug-box major"
-              style="left:76%;top:4%;width:20%;height:22%;">
-              <span>UI 오류 · Major</span>
+            <div class="bug-box minor"
+              style="left:72%;top:5%;width:25%;height:22%;">
+              <span>UI 오류 · Minor</span>
             </div>
           
             <div class="bug-box major"
               style="left:76%;top:4%;width:20%;height:22%;">
-              <span>충돌 판정 · Major</span>
+              <span>미니맵 불일치 · Major</span>
+            </div>
+          
+            <div class="bug-box minor"
+              style="left:45%;top:55.00000000000001%;width:35%;height:25%;">
+              <span>렌더링 이상 · Minor</span>
+            </div>
+          
+            <div class="bug-box minor"
+              style="left:45%;top:40%;width:30%;height:30%;">
+              <span>충돌 판정 · Minor</span>
             </div>
           
       </div>
@@ -332,23 +342,45 @@ body {
           <article class="candidate">
             <div class="candidate-top">
               <strong>UI 오류</strong>
-              <span class="badge major">Major</span>
+              <span class="badge minor">Minor</span>
               <span class="confidence">신뢰도 0.85</span>
             </div>
-            <p>The health bar overlaps with the score display.</p>
-            <small><b>Unity Cause:</b> Incorrect UI canvas sorting order or layout settings.</small>
-            <small><b>Fix:</b> Adjust the canvas hierarchy or reposition the UI elements.</small>
+            <p>Health bar overlaps with the minimap.</p>
+            <small><b>Unity Cause:</b> Improper UI layout settings or anchors.</small>
+            <small><b>Fix:</b> Adjust the UI anchors and layout to prevent overlap.</small>
+          </article>
+        
+          <article class="candidate">
+            <div class="candidate-top">
+              <strong>미니맵 불일치</strong>
+              <span class="badge major">Major</span>
+              <span class="confidence">신뢰도 0.9</span>
+            </div>
+            <p>Minimap does not accurately reflect the player's position.</p>
+            <small><b>Unity Cause:</b> Incorrect minimap scaling or player position tracking.</small>
+            <small><b>Fix:</b> Check minimap scaling settings and player coordinate mapping.</small>
+          </article>
+        
+          <article class="candidate">
+            <div class="candidate-top">
+              <strong>렌더링 이상</strong>
+              <span class="badge minor">Minor</span>
+              <span class="confidence">신뢰도 0.75</span>
+            </div>
+            <p>Flickering textures on the ground.</p>
+            <small><b>Unity Cause:</b> Z-fighting or incorrect material settings.</small>
+            <small><b>Fix:</b> Adjust the materials or increase the distance between overlapping objects.</small>
           </article>
         
           <article class="candidate">
             <div class="candidate-top">
               <strong>충돌 판정</strong>
-              <span class="badge major">Major</span>
-              <span class="confidence">신뢰도 0.9</span>
+              <span class="badge minor">Minor</span>
+              <span class="confidence">신뢰도 0.8</span>
             </div>
-            <p>Character model partially intersects with the environment.</p>
-            <small><b>Unity Cause:</b> Improper collider setup or incorrect object placement.</small>
-            <small><b>Fix:</b> Check and adjust the colliders or reposition the character model.</small>
+            <p>Two NPCs are overlapping in the scene.</p>
+            <small><b>Unity Cause:</b> Improper spawn logic or collision settings.</small>
+            <small><b>Fix:</b> Implement better spawn logic to avoid overlap.</small>
           </article>
         
       </div>
@@ -358,22 +390,27 @@ body {
       <div class="image-card-header">
         <div>
           <h2>Screenshot 2</h2>
-          <p>bug_object_clipping_01.png</p>
+          <p>test_collision_issue_08.png</p>
         </div>
         <div class="pill">충돌 판정</div>
       </div>
 
       <div class="screenshot-wrapper">
-        <img class="game-image" src="../data/screenshots/bug_object_clipping_01.png" alt="bug_object_clipping_01.png">
+        <img class="game-image" src="../data/screenshots/test_collision_issue_08.png" alt="test_collision_issue_08.png">
         
+            <div class="bug-box minor"
+              style="left:72%;top:5%;width:25%;height:22%;">
+              <span>UI 오류 · Minor</span>
+            </div>
+          
             <div class="bug-box major"
-              style="left:76%;top:4%;width:20%;height:22%;">
-              <span>UI 오류 · Major</span>
+              style="left:45%;top:40%;width:30%;height:30%;">
+              <span>충돌 판정 · Major</span>
             </div>
           
             <div class="bug-box major"
               style="left:76%;top:4%;width:20%;height:22%;">
-              <span>충돌 판정 · Major</span>
+              <span>미니맵 불일치 · Major</span>
             </div>
           
       </div>
@@ -383,12 +420,12 @@ body {
           <article class="candidate">
             <div class="candidate-top">
               <strong>UI 오류</strong>
-              <span class="badge major">Major</span>
+              <span class="badge minor">Minor</span>
               <span class="confidence">신뢰도 0.85</span>
             </div>
-            <p>Health bar overlaps with the inventory UI.</p>
-            <small><b>Unity Cause:</b> Incorrect canvas settings or layout group configuration.</small>
-            <small><b>Fix:</b> Adjust the positioning of the UI elements in the canvas.</small>
+            <p>Health bar overlaps with minimap in the top corner.</p>
+            <small><b>Unity Cause:</b> Incorrect positioning of UI elements.</small>
+            <small><b>Fix:</b> Adjust the anchor points and layout settings for the UI components.</small>
           </article>
         
           <article class="candidate">
@@ -397,9 +434,20 @@ body {
               <span class="badge major">Major</span>
               <span class="confidence">신뢰도 0.9</span>
             </div>
-            <p>Character model partially clips through the wall.</p>
-            <small><b>Unity Cause:</b> Incorrect collider settings or object placement.</small>
-            <small><b>Fix:</b> Check and adjust the collider bounds of the character and wall.</small>
+            <p>Character model partially intersects with the environment geometry.</p>
+            <small><b>Unity Cause:</b> Improper collider settings or incorrect model import settings.</small>
+            <small><b>Fix:</b> Review and adjust colliders or modify the model's mesh to prevent clipping.</small>
+          </article>
+        
+          <article class="candidate">
+            <div class="candidate-top">
+              <strong>미니맵 불일치</strong>
+              <span class="badge major">Major</span>
+              <span class="confidence">신뢰도 0.7</span>
+            </div>
+            <p>Player's location on the minimap does not align with the actual position in the game world.</p>
+            <small><b>Unity Cause:</b> Incorrect mapping of player coordinates to minimap coordinates.</small>
+            <small><b>Fix:</b> Check the minimap script for accurate position translation.</small>
           </article>
         
       </div>
@@ -409,32 +457,22 @@ body {
       <div class="image-card-header">
         <div>
           <h2>Screenshot 3</h2>
-          <p>bug_ui_overlap_01.png</p>
+          <p>test_minimap_mismatch_03.png</p>
         </div>
         <div class="pill">충돌 판정</div>
       </div>
 
       <div class="screenshot-wrapper">
-        <img class="game-image" src="../data/screenshots/bug_ui_overlap_01.png" alt="bug_ui_overlap_01.png">
+        <img class="game-image" src="../data/screenshots/test_minimap_mismatch_03.png" alt="test_minimap_mismatch_03.png">
         
-            <div class="bug-box major"
-              style="left:76%;top:4%;width:20%;height:22%;">
-              <span>UI 오류 · Major</span>
+            <div class="bug-box minor"
+              style="left:72%;top:5%;width:25%;height:22%;">
+              <span>UI 오류 · Minor</span>
             </div>
           
             <div class="bug-box major"
-              style="left:76%;top:4%;width:20%;height:22%;">
+              style="left:45%;top:40%;width:30%;height:30%;">
               <span>충돌 판정 · Major</span>
-            </div>
-          
-            <div class="bug-box major"
-              style="left:76%;top:4%;width:20%;height:22%;">
-              <span>미니맵 불일치 · Major</span>
-            </div>
-          
-            <div class="bug-box major"
-              style="left:76%;top:4%;width:20%;height:22%;">
-              <span>렌더링 이상 · Major</span>
             </div>
           
       </div>
@@ -444,11 +482,11 @@ body {
           <article class="candidate">
             <div class="candidate-top">
               <strong>UI 오류</strong>
-              <span class="badge major">Major</span>
+              <span class="badge minor">Minor</span>
               <span class="confidence">신뢰도 0.85</span>
             </div>
-            <p>The health bar overlaps with the inventory UI.</p>
-            <small><b>Unity Cause:</b> Incorrect canvas settings or layout group configurations.</small>
+            <p>The health bar overlaps with the minimap.</p>
+            <small><b>Unity Cause:</b> Improper UI layout settings or anchors.</small>
             <small><b>Fix:</b> Adjust the RectTransform settings of the UI elements to prevent overlap.</small>
           </article>
         
@@ -458,31 +496,494 @@ body {
               <span class="badge major">Major</span>
               <span class="confidence">신뢰도 0.9</span>
             </div>
-            <p>Character model partially clips through the wall object.</p>
-            <small><b>Unity Cause:</b> Improper collision settings or mesh collider configuration.</small>
-            <small><b>Fix:</b> Review and adjust the collider settings on the character and wall objects.</small>
+            <p>Character model is partially clipping through the environment.</p>
+            <small><b>Unity Cause:</b> Incorrect collider settings or scaling issues.</small>
+            <small><b>Fix:</b> Review and adjust collider sizes and check for appropriate layer settings.</small>
+          </article>
+        
+      </div>
+    </section>
+  
+    <section class="image-card">
+      <div class="image-card-header">
+        <div>
+          <h2>Screenshot 4</h2>
+          <p>test_missing_texture_05.png</p>
+        </div>
+        <div class="pill">미니맵 불일치</div>
+      </div>
+
+      <div class="screenshot-wrapper">
+        <img class="game-image" src="../data/screenshots/test_missing_texture_05.png" alt="test_missing_texture_05.png">
+        
+            <div class="bug-box minor"
+              style="left:72%;top:5%;width:25%;height:22%;">
+              <span>UI 오류 · Minor</span>
+            </div>
+          
+            <div class="bug-box major"
+              style="left:76%;top:4%;width:20%;height:22%;">
+              <span>미니맵 불일치 · Major</span>
+            </div>
+          
+            <div class="bug-box minor"
+              style="left:45%;top:55.00000000000001%;width:35%;height:25%;">
+              <span>렌더링 이상 · Minor</span>
+            </div>
+          
+            <div class="bug-box minor"
+              style="left:45%;top:40%;width:30%;height:30%;">
+              <span>충돌 판정 · Minor</span>
+            </div>
+          
+      </div>
+
+      <div class="candidate-list">
+        
+          <article class="candidate">
+            <div class="candidate-top">
+              <strong>UI 오류</strong>
+              <span class="badge minor">Minor</span>
+              <span class="confidence">신뢰도 0.85</span>
+            </div>
+            <p>The health bar overlaps with the minimap.</p>
+            <small><b>Unity Cause:</b> Incorrect canvas sorting order or anchors.</small>
+            <small><b>Fix:</b> Adjust the canvas hierarchy or reposition UI elements.</small>
           </article>
         
           <article class="candidate">
             <div class="candidate-top">
               <strong>미니맵 불일치</strong>
               <span class="badge major">Major</span>
-              <span class="confidence">신뢰도 0.7</span>
+              <span class="confidence">신뢰도 0.9</span>
             </div>
-            <p>Minimap shows player at a different location than in the main view.</p>
-            <small><b>Unity Cause:</b> Incorrect player position tracking for minimap.</small>
-            <small><b>Fix:</b> Ensure that the minimap camera is correctly tracking the player's position.</small>
+            <p>Minimap does not show the correct player position.</p>
+            <small><b>Unity Cause:</b> Minimap camera not aligned with player position.</small>
+            <small><b>Fix:</b> Reconfigure the minimap camera settings to track the player accurately.</small>
           </article>
         
           <article class="candidate">
             <div class="candidate-top">
               <strong>렌더링 이상</strong>
+              <span class="badge minor">Minor</span>
+              <span class="confidence">신뢰도 0.75</span>
+            </div>
+            <p>Flickering textures on the terrain.</p>
+            <small><b>Unity Cause:</b> Z-fighting between overlapping textures.</small>
+            <small><b>Fix:</b> Adjust the material properties or increase the distance between overlapping objects.</small>
+          </article>
+        
+          <article class="candidate">
+            <div class="candidate-top">
+              <strong>충돌 판정</strong>
+              <span class="badge minor">Minor</span>
+              <span class="confidence">신뢰도 0.8</span>
+            </div>
+            <p>Player character passes through a wall.</p>
+            <small><b>Unity Cause:</b> Incorrect collider setup or missing colliders.</small>
+            <small><b>Fix:</b> Verify that all colliders are correctly placed and configured.</small>
+          </article>
+        
+      </div>
+    </section>
+  
+    <section class="image-card">
+      <div class="image-card-header">
+        <div>
+          <h2>Screenshot 5</h2>
+          <p>test_npc_stacking_06.png</p>
+        </div>
+        <div class="pill">충돌 판정</div>
+      </div>
+
+      <div class="screenshot-wrapper">
+        <img class="game-image" src="../data/screenshots/test_npc_stacking_06.png" alt="test_npc_stacking_06.png">
+        
+            <div class="bug-box minor"
+              style="left:72%;top:5%;width:25%;height:22%;">
+              <span>UI 오류 · Minor</span>
+            </div>
+          
+            <div class="bug-box major"
+              style="left:45%;top:40%;width:30%;height:30%;">
+              <span>충돌 판정 · Major</span>
+            </div>
+          
+            <div class="bug-box minor"
+              style="left:35%;top:57.99999999999999%;width:22%;height:22%;">
+              <span>오브젝트 겹침 · Minor</span>
+            </div>
+          
+            <div class="bug-box major"
+              style="left:45%;top:40%;width:30%;height:30%;">
+              <span>충돌 판정 · Major</span>
+            </div>
+          
+      </div>
+
+      <div class="candidate-list">
+        
+          <article class="candidate">
+            <div class="candidate-top">
+              <strong>UI 오류</strong>
+              <span class="badge minor">Minor</span>
+              <span class="confidence">신뢰도 0.85</span>
+            </div>
+            <p>The health bar overlaps with the minimap in the top right corner.</p>
+            <small><b>Unity Cause:</b> Improper UI layout settings or anchor points.</small>
+            <small><b>Fix:</b> Adjust the positioning of the UI elements in the Canvas.</small>
+          </article>
+        
+          <article class="candidate">
+            <div class="candidate-top">
+              <strong>충돌 판정</strong>
+              <span class="badge major">Major</span>
+              <span class="confidence">신뢰도 0.9</span>
+            </div>
+            <p>Character model partially clips through the wall.</p>
+            <small><b>Unity Cause:</b> Incorrect collider settings or mesh rendering issues.</small>
+            <small><b>Fix:</b> Check the collider bounds and adjust the character's position or scale.</small>
+          </article>
+        
+          <article class="candidate">
+            <div class="candidate-top">
+              <strong>오브젝트 겹침</strong>
+              <span class="badge minor">Minor</span>
+              <span class="confidence">신뢰도 0.75</span>
+            </div>
+            <p>Strange flickering on the terrain in the background.</p>
+            <small><b>Unity Cause:</b> Z-fighting due to overlapping meshes or incorrect camera settings.</small>
+            <small><b>Fix:</b> Adjust the mesh depth or modify camera clipping planes.</small>
+          </article>
+        
+          <article class="candidate">
+            <div class="candidate-top">
+              <strong>충돌 판정</strong>
+              <span class="badge major">Major</span>
+              <span class="confidence">신뢰도 0.8</span>
+            </div>
+            <p>Player can walk through certain objects that should be solid.</p>
+            <small><b>Unity Cause:</b> Colliders not set up correctly on solid objects.</small>
+            <small><b>Fix:</b> Review and fix the collider configurations for affected objects.</small>
+          </article>
+        
+      </div>
+    </section>
+  
+    <section class="image-card">
+      <div class="image-card-header">
+        <div>
+          <h2>Screenshot 6</h2>
+          <p>test_object_clipping_02.png</p>
+        </div>
+        <div class="pill">충돌 판정</div>
+      </div>
+
+      <div class="screenshot-wrapper">
+        <img class="game-image" src="../data/screenshots/test_object_clipping_02.png" alt="test_object_clipping_02.png">
+        
+            <div class="bug-box minor"
+              style="left:72%;top:5%;width:25%;height:22%;">
+              <span>UI 오류 · Minor</span>
+            </div>
+          
+            <div class="bug-box major"
+              style="left:45%;top:40%;width:30%;height:30%;">
+              <span>충돌 판정 · Major</span>
+            </div>
+          
+            <div class="bug-box major"
+              style="left:76%;top:4%;width:20%;height:22%;">
+              <span>미니맵 불일치 · Major</span>
+            </div>
+          
+      </div>
+
+      <div class="candidate-list">
+        
+          <article class="candidate">
+            <div class="candidate-top">
+              <strong>UI 오류</strong>
+              <span class="badge minor">Minor</span>
+              <span class="confidence">신뢰도 0.85</span>
+            </div>
+            <p>The health bar overlaps with the minimap.</p>
+            <small><b>Unity Cause:</b> Incorrect UI canvas settings or layout issues.</small>
+            <small><b>Fix:</b> Adjust the positioning of the UI elements in the Canvas.</small>
+          </article>
+        
+          <article class="candidate">
+            <div class="candidate-top">
+              <strong>충돌 판정</strong>
+              <span class="badge major">Major</span>
+              <span class="confidence">신뢰도 0.9</span>
+            </div>
+            <p>Character model partially clipping through the wall.</p>
+            <small><b>Unity Cause:</b> Improper collider setup or wrong layer configurations.</small>
+            <small><b>Fix:</b> Review and adjust colliders for the character and the wall.</small>
+          </article>
+        
+          <article class="candidate">
+            <div class="candidate-top">
+              <strong>미니맵 불일치</strong>
               <span class="badge major">Major</span>
               <span class="confidence">신뢰도 0.75</span>
             </div>
-            <p>Strange flickering on the edges of the terrain.</p>
-            <small><b>Unity Cause:</b> Z-fighting due to overlapping geometry.</small>
-            <small><b>Fix:</b> Adjust the positions of the overlapping objects or tweak the materials to prevent z-fighting.</small>
+            <p>Minimap does not accurately reflect player position.</p>
+            <small><b>Unity Cause:</b> Incorrect player position tracking on the minimap.</small>
+            <small><b>Fix:</b> Verify minimap camera settings and player position updates.</small>
+          </article>
+        
+      </div>
+    </section>
+  
+    <section class="image-card">
+      <div class="image-card-header">
+        <div>
+          <h2>Screenshot 7</h2>
+          <p>test_pathfinding_issue_07.png</p>
+        </div>
+        <div class="pill">미니맵 불일치</div>
+      </div>
+
+      <div class="screenshot-wrapper">
+        <img class="game-image" src="../data/screenshots/test_pathfinding_issue_07.png" alt="test_pathfinding_issue_07.png">
+        
+            <div class="bug-box minor"
+              style="left:66%;top:10%;width:28.000000000000004%;height:20%;">
+              <span>UI 오류 · Minor</span>
+            </div>
+          
+            <div class="bug-box major"
+              style="left:76%;top:4%;width:20%;height:22%;">
+              <span>미니맵 불일치 · Major</span>
+            </div>
+          
+            <div class="bug-box minor"
+              style="left:45%;top:55.00000000000001%;width:35%;height:25%;">
+              <span>렌더링 이상 · Minor</span>
+            </div>
+          
+            <div class="bug-box major"
+              style="left:45%;top:40%;width:30%;height:30%;">
+              <span>충돌 판정 · Major</span>
+            </div>
+          
+      </div>
+
+      <div class="candidate-list">
+        
+          <article class="candidate">
+            <div class="candidate-top">
+              <strong>UI 오류</strong>
+              <span class="badge minor">Minor</span>
+              <span class="confidence">신뢰도 0.8</span>
+            </div>
+            <p>Health bar overlaps with inventory UI.</p>
+            <small><b>Unity Cause:</b> Incorrect UI layout settings or anchors.</small>
+            <small><b>Fix:</b> Adjust the positioning and anchors of the UI elements in the Canvas.</small>
+          </article>
+        
+          <article class="candidate">
+            <div class="candidate-top">
+              <strong>미니맵 불일치</strong>
+              <span class="badge major">Major</span>
+              <span class="confidence">신뢰도 0.9</span>
+            </div>
+            <p>Minimap does not reflect the player's current position accurately.</p>
+            <small><b>Unity Cause:</b> Incorrect position syncing between player and minimap.</small>
+            <small><b>Fix:</b> Check the minimap camera settings and ensure correct player position updates.</small>
+          </article>
+        
+          <article class="candidate">
+            <div class="candidate-top">
+              <strong>렌더링 이상</strong>
+              <span class="badge minor">Minor</span>
+              <span class="confidence">신뢰도 0.75</span>
+            </div>
+            <p>Flickering textures on the terrain.</p>
+            <small><b>Unity Cause:</b> Shader issues or texture mipmap settings.</small>
+            <small><b>Fix:</b> Review the shaders used and adjust mipmap settings for the terrain textures.</small>
+          </article>
+        
+          <article class="candidate">
+            <div class="candidate-top">
+              <strong>충돌 판정</strong>
+              <span class="badge major">Major</span>
+              <span class="confidence">신뢰도 0.65</span>
+            </div>
+            <p>Two NPCs are overlapping in the center of the screen.</p>
+            <small><b>Unity Cause:</b> Incorrect spawn logic or lack of collision avoidance.</small>
+            <small><b>Fix:</b> Implement spacing logic for NPC spawns to prevent overlap.</small>
+          </article>
+        
+      </div>
+    </section>
+  
+    <section class="image-card">
+      <div class="image-card-header">
+        <div>
+          <h2>Screenshot 8</h2>
+          <p>test_rendering_artifact_04.png</p>
+        </div>
+        <div class="pill">충돌 판정</div>
+      </div>
+
+      <div class="screenshot-wrapper">
+        <img class="game-image" src="../data/screenshots/test_rendering_artifact_04.png" alt="test_rendering_artifact_04.png">
+        
+            <div class="bug-box minor"
+              style="left:72%;top:5%;width:25%;height:22%;">
+              <span>UI 오류 · Minor</span>
+            </div>
+          
+            <div class="bug-box major"
+              style="left:45%;top:40%;width:30%;height:30%;">
+              <span>충돌 판정 · Major</span>
+            </div>
+          
+      </div>
+
+      <div class="candidate-list">
+        
+          <article class="candidate">
+            <div class="candidate-top">
+              <strong>UI 오류</strong>
+              <span class="badge minor">Minor</span>
+              <span class="confidence">신뢰도 0.85</span>
+            </div>
+            <p>The health bar overlaps with the minimap.</p>
+            <small><b>Unity Cause:</b> Incorrect UI canvas sorting or positioning.</small>
+            <small><b>Fix:</b> Adjust the UI elements' RectTransform properties to ensure proper layering.</small>
+          </article>
+        
+          <article class="candidate">
+            <div class="candidate-top">
+              <strong>충돌 판정</strong>
+              <span class="badge major">Major</span>
+              <span class="confidence">신뢰도 0.9</span>
+            </div>
+            <p>Character model partially clips through the wall.</p>
+            <small><b>Unity Cause:</b> Incorrect collider setup or scale issues.</small>
+            <small><b>Fix:</b> Review collider boundaries and adjust the character's position or collider size.</small>
+          </article>
+        
+      </div>
+    </section>
+  
+    <section class="image-card">
+      <div class="image-card-header">
+        <div>
+          <h2>Screenshot 9</h2>
+          <p>test_ui_cutoff_09.png</p>
+        </div>
+        <div class="pill">충돌 판정</div>
+      </div>
+
+      <div class="screenshot-wrapper">
+        <img class="game-image" src="../data/screenshots/test_ui_cutoff_09.png" alt="test_ui_cutoff_09.png">
+        
+            <div class="bug-box minor"
+              style="left:72%;top:5%;width:25%;height:22%;">
+              <span>UI 오류 · Minor</span>
+            </div>
+          
+            <div class="bug-box major"
+              style="left:45%;top:40%;width:30%;height:30%;">
+              <span>충돌 판정 · Major</span>
+            </div>
+          
+      </div>
+
+      <div class="candidate-list">
+        
+          <article class="candidate">
+            <div class="candidate-top">
+              <strong>UI 오류</strong>
+              <span class="badge minor">Minor</span>
+              <span class="confidence">신뢰도 0.85</span>
+            </div>
+            <p>The health bar overlaps with the minimap, making it hard to read both elements.</p>
+            <small><b>Unity Cause:</b> Incorrect UI layout settings or canvas scaling issues.</small>
+            <small><b>Fix:</b> Adjust the layout of the UI elements to ensure they do not overlap and are clearly visible.</small>
+          </article>
+        
+          <article class="candidate">
+            <div class="candidate-top">
+              <strong>충돌 판정</strong>
+              <span class="badge major">Major</span>
+              <span class="confidence">신뢰도 0.9</span>
+            </div>
+            <p>The character model is partially clipping through a wall.</p>
+            <small><b>Unity Cause:</b> Improper collider settings or incorrect positioning of the character model.</small>
+            <small><b>Fix:</b> Check and adjust the collider settings and ensure the character's position respects the environment boundaries.</small>
+          </article>
+        
+      </div>
+    </section>
+  
+    <section class="image-card">
+      <div class="image-card-header">
+        <div>
+          <h2>Screenshot 10</h2>
+          <p>test_ui_overlap_01.png</p>
+        </div>
+        <div class="pill">충돌 판정</div>
+      </div>
+
+      <div class="screenshot-wrapper">
+        <img class="game-image" src="../data/screenshots/test_ui_overlap_01.png" alt="test_ui_overlap_01.png">
+        
+            <div class="bug-box minor"
+              style="left:66%;top:10%;width:28.000000000000004%;height:20%;">
+              <span>UI 오류 · Minor</span>
+            </div>
+          
+            <div class="bug-box major"
+              style="left:45%;top:40%;width:30%;height:30%;">
+              <span>충돌 판정 · Major</span>
+            </div>
+          
+            <div class="bug-box minor"
+              style="left:45%;top:55.00000000000001%;width:35%;height:25%;">
+              <span>렌더링 이상 · Minor</span>
+            </div>
+          
+      </div>
+
+      <div class="candidate-list">
+        
+          <article class="candidate">
+            <div class="candidate-top">
+              <strong>UI 오류</strong>
+              <span class="badge minor">Minor</span>
+              <span class="confidence">신뢰도 0.85</span>
+            </div>
+            <p>The health bar overlaps with the inventory icon.</p>
+            <small><b>Unity Cause:</b> Canvas scaling issues or incorrect anchor settings.</small>
+            <small><b>Fix:</b> Adjust the canvas settings and reposition UI elements to prevent overlap.</small>
+          </article>
+        
+          <article class="candidate">
+            <div class="candidate-top">
+              <strong>충돌 판정</strong>
+              <span class="badge major">Major</span>
+              <span class="confidence">신뢰도 0.9</span>
+            </div>
+            <p>Character's arm clips through the wall when standing close.</p>
+            <small><b>Unity Cause:</b> Improper collider setup or incorrect layer settings.</small>
+            <small><b>Fix:</b> Review the collider dimensions and adjust them to prevent clipping.</small>
+          </article>
+        
+          <article class="candidate">
+            <div class="candidate-top">
+              <strong>렌더링 이상</strong>
+              <span class="badge minor">Minor</span>
+              <span class="confidence">신뢰도 0.75</span>
+            </div>
+            <p>Flickering textures on the ground in certain lighting conditions.</p>
+            <small><b>Unity Cause:</b> Z-fighting between two overlapping meshes.</small>
+            <small><b>Fix:</b> Adjust the position or scale of overlapping meshes to eliminate Z-fighting.</small>
           </article>
         
       </div>
@@ -493,28 +994,28 @@ body {
     <aside class="side card summary">
       <h2>QA Summary</h2>
       <div class="summary-grid">
-        <div class="stat"><div class="num">8</div><div class="label">Total Bugs</div></div>
-        <div class="stat"><div class="num">0.84</div><div class="label">Overall Confidence</div></div>
+        <div class="stat"><div class="num">31</div><div class="label">Total Bugs</div></div>
+        <div class="stat"><div class="num">0.83</div><div class="label">Overall Confidence</div></div>
         <div class="stat"><div class="num">0</div><div class="label">Critical</div></div>
-        <div class="stat"><div class="num">8</div><div class="label">Major</div></div>
-        <div class="stat"><div class="num">0</div><div class="label">Minor</div></div>
+        <div class="stat"><div class="num">14</div><div class="label">Major</div></div>
+        <div class="stat"><div class="num">17</div><div class="label">Minor</div></div>
         <div class="stat"><div class="num">0</div><div class="label">Info</div></div>
       </div>
 
       <div class="breakdown">
         <h3>Category Breakdown</h3>
         
-          <div class="type-row"><span>UI 오류</span><strong>3</strong></div>
+          <div class="type-row"><span>UI 오류</span><strong>10</strong></div>
         
-          <div class="type-row"><span>충돌 판정</span><strong>3</strong></div>
+          <div class="type-row"><span>충돌 판정</span><strong>11</strong></div>
         
           <div class="type-row"><span>경로 탐색</span><strong>0</strong></div>
         
-          <div class="type-row"><span>렌더링 이상</span><strong>1</strong></div>
+          <div class="type-row"><span>렌더링 이상</span><strong>4</strong></div>
         
-          <div class="type-row"><span>미니맵 불일치</span><strong>1</strong></div>
+          <div class="type-row"><span>미니맵 불일치</span><strong>5</strong></div>
         
-          <div class="type-row"><span>오브젝트 겹침</span><strong>0</strong></div>
+          <div class="type-row"><span>오브젝트 겹침</span><strong>1</strong></div>
         
           <div class="type-row"><span>기타</span><strong>0</strong></div>
         
@@ -527,10 +1028,10 @@ body {
     
     <article class="bug-card">
       <h3>BUG-001 · UI 오류
-        <span class="badge major">Major</span>
+        <span class="badge minor">Minor</span>
       </h3>
-      <p class="muted"><b>Source:</b> bug_minimap_mismatch_01.png · <b>Confidence:</b> 0.85</p>
-      <p>The health bar overlaps with the score display.</p>
+      <p class="muted"><b>Source:</b> test_animation_bug_10.png · <b>Confidence:</b> 0.85</p>
+      <p>Health bar overlaps with the minimap.</p>
 
       <h4>Root Cause Candidates</h4>
       <ul><li>UI Canvas의 Anchor, Pivot, RectTransform 설정 오류 가능성</li><li>Canvas Scaler 또는 Sorting Order 설정 문제 가능성</li></ul>
@@ -543,45 +1044,45 @@ body {
     </article>
   
     <article class="bug-card">
-      <h3>BUG-002 · 충돌 판정
+      <h3>BUG-002 · 미니맵 불일치
         <span class="badge major">Major</span>
       </h3>
-      <p class="muted"><b>Source:</b> bug_minimap_mismatch_01.png · <b>Confidence:</b> 0.9</p>
-      <p>Character model partially intersects with the environment.</p>
+      <p class="muted"><b>Source:</b> test_animation_bug_10.png · <b>Confidence:</b> 0.9</p>
+      <p>Minimap does not accurately reflect the player's position.</p>
 
       <h4>Root Cause Candidates</h4>
-      <ul><li>Collider 또는 Rigidbody 설정 누락 가능성</li><li>Layer Collision Matrix 설정 문제 가능성</li></ul>
+      <ul><li>Minimap Camera가 Player Transform을 정확히 추적하지 못하는 문제 가능성</li><li>월드 좌표와 미니맵 좌표 변환 로직 오류 가능성</li></ul>
 
       <h4>Reproduction Steps</h4>
       <ul><li>Unity에서 해당 씬을 실행한다.</li><li>스크린샷과 동일한 위치로 플레이어를 이동한다.</li><li>Game View에서 문제 영역을 확인한다.</li><li>Scene View에서 Collider, Canvas, Camera, NavMesh 상태를 비교한다.</li><li>동일 조건에서 문제가 반복 재현되는지 확인한다.</li></ul>
 
       <h4>Fix Suggestions</h4>
-      <ul><li>Collider, Rigidbody, Character Controller 설정을 확인한다.</li><li>Layer Collision Matrix와 Is Trigger 설정을 점검한다.</li></ul>
+      <ul><li>Minimap Camera target이 Player Transform을 정확히 추적하는지 확인한다.</li><li>월드 좌표를 미니맵 좌표로 변환하는 스크립트를 점검한다.</li></ul>
     </article>
   
     <article class="bug-card">
-      <h3>BUG-003 · UI 오류
-        <span class="badge major">Major</span>
+      <h3>BUG-003 · 렌더링 이상
+        <span class="badge minor">Minor</span>
       </h3>
-      <p class="muted"><b>Source:</b> bug_object_clipping_01.png · <b>Confidence:</b> 0.85</p>
-      <p>Health bar overlaps with the inventory UI.</p>
+      <p class="muted"><b>Source:</b> test_animation_bug_10.png · <b>Confidence:</b> 0.75</p>
+      <p>Flickering textures on the ground.</p>
 
       <h4>Root Cause Candidates</h4>
-      <ul><li>UI Canvas의 Anchor, Pivot, RectTransform 설정 오류 가능성</li><li>Canvas Scaler 또는 Sorting Order 설정 문제 가능성</li></ul>
+      <ul><li>Z-fighting 또는 중복 메시 문제 가능성</li><li>Shader, Material, Shadow Quality 설정 문제 가능성</li></ul>
 
       <h4>Reproduction Steps</h4>
       <ul><li>Unity에서 해당 씬을 실행한다.</li><li>스크린샷과 동일한 위치로 플레이어를 이동한다.</li><li>Game View에서 문제 영역을 확인한다.</li><li>Scene View에서 Collider, Canvas, Camera, NavMesh 상태를 비교한다.</li><li>동일 조건에서 문제가 반복 재현되는지 확인한다.</li></ul>
 
       <h4>Fix Suggestions</h4>
-      <ul><li>Canvas Scaler, Anchor, Pivot, RectTransform, Sorting Order를 확인한다.</li><li>여러 해상도에서 UI Safe Area와 겹침 여부를 테스트한다.</li></ul>
+      <ul><li>Material, Shader, Shadow Quality, Z-fighting 여부를 확인한다.</li><li>겹친 메시 또는 중복 지형 오브젝트를 제거한다.</li></ul>
     </article>
   
     <article class="bug-card">
       <h3>BUG-004 · 충돌 판정
-        <span class="badge major">Major</span>
+        <span class="badge minor">Minor</span>
       </h3>
-      <p class="muted"><b>Source:</b> bug_object_clipping_01.png · <b>Confidence:</b> 0.9</p>
-      <p>Character model partially clips through the wall.</p>
+      <p class="muted"><b>Source:</b> test_animation_bug_10.png · <b>Confidence:</b> 0.8</p>
+      <p>Two NPCs are overlapping in the scene.</p>
 
       <h4>Root Cause Candidates</h4>
       <ul><li>Collider 또는 Rigidbody 설정 누락 가능성</li><li>Layer Collision Matrix 설정 문제 가능성</li></ul>
@@ -595,10 +1096,10 @@ body {
   
     <article class="bug-card">
       <h3>BUG-005 · UI 오류
-        <span class="badge major">Major</span>
+        <span class="badge minor">Minor</span>
       </h3>
-      <p class="muted"><b>Source:</b> bug_ui_overlap_01.png · <b>Confidence:</b> 0.85</p>
-      <p>The health bar overlaps with the inventory UI.</p>
+      <p class="muted"><b>Source:</b> test_collision_issue_08.png · <b>Confidence:</b> 0.85</p>
+      <p>Health bar overlaps with minimap in the top corner.</p>
 
       <h4>Root Cause Candidates</h4>
       <ul><li>UI Canvas의 Anchor, Pivot, RectTransform 설정 오류 가능성</li><li>Canvas Scaler 또는 Sorting Order 설정 문제 가능성</li></ul>
@@ -614,8 +1115,8 @@ body {
       <h3>BUG-006 · 충돌 판정
         <span class="badge major">Major</span>
       </h3>
-      <p class="muted"><b>Source:</b> bug_ui_overlap_01.png · <b>Confidence:</b> 0.9</p>
-      <p>Character model partially clips through the wall object.</p>
+      <p class="muted"><b>Source:</b> test_collision_issue_08.png · <b>Confidence:</b> 0.9</p>
+      <p>Character model partially intersects with the environment geometry.</p>
 
       <h4>Root Cause Candidates</h4>
       <ul><li>Collider 또는 Rigidbody 설정 누락 가능성</li><li>Layer Collision Matrix 설정 문제 가능성</li></ul>
@@ -631,8 +1132,8 @@ body {
       <h3>BUG-007 · 미니맵 불일치
         <span class="badge major">Major</span>
       </h3>
-      <p class="muted"><b>Source:</b> bug_ui_overlap_01.png · <b>Confidence:</b> 0.7</p>
-      <p>Minimap shows player at a different location than in the main view.</p>
+      <p class="muted"><b>Source:</b> test_collision_issue_08.png · <b>Confidence:</b> 0.7</p>
+      <p>Player's location on the minimap does not align with the actual position in the game world.</p>
 
       <h4>Root Cause Candidates</h4>
       <ul><li>Minimap Camera가 Player Transform을 정확히 추적하지 못하는 문제 가능성</li><li>월드 좌표와 미니맵 좌표 변환 로직 오류 가능성</li></ul>
@@ -645,11 +1146,402 @@ body {
     </article>
   
     <article class="bug-card">
-      <h3>BUG-008 · 렌더링 이상
+      <h3>BUG-008 · UI 오류
+        <span class="badge minor">Minor</span>
+      </h3>
+      <p class="muted"><b>Source:</b> test_minimap_mismatch_03.png · <b>Confidence:</b> 0.85</p>
+      <p>The health bar overlaps with the minimap.</p>
+
+      <h4>Root Cause Candidates</h4>
+      <ul><li>UI Canvas의 Anchor, Pivot, RectTransform 설정 오류 가능성</li><li>Canvas Scaler 또는 Sorting Order 설정 문제 가능성</li></ul>
+
+      <h4>Reproduction Steps</h4>
+      <ul><li>Unity에서 해당 씬을 실행한다.</li><li>스크린샷과 동일한 위치로 플레이어를 이동한다.</li><li>Game View에서 문제 영역을 확인한다.</li><li>Scene View에서 Collider, Canvas, Camera, NavMesh 상태를 비교한다.</li><li>동일 조건에서 문제가 반복 재현되는지 확인한다.</li></ul>
+
+      <h4>Fix Suggestions</h4>
+      <ul><li>Canvas Scaler, Anchor, Pivot, RectTransform, Sorting Order를 확인한다.</li><li>여러 해상도에서 UI Safe Area와 겹침 여부를 테스트한다.</li></ul>
+    </article>
+  
+    <article class="bug-card">
+      <h3>BUG-009 · 충돌 판정
         <span class="badge major">Major</span>
       </h3>
-      <p class="muted"><b>Source:</b> bug_ui_overlap_01.png · <b>Confidence:</b> 0.75</p>
-      <p>Strange flickering on the edges of the terrain.</p>
+      <p class="muted"><b>Source:</b> test_minimap_mismatch_03.png · <b>Confidence:</b> 0.9</p>
+      <p>Character model is partially clipping through the environment.</p>
+
+      <h4>Root Cause Candidates</h4>
+      <ul><li>Collider 또는 Rigidbody 설정 누락 가능성</li><li>Layer Collision Matrix 설정 문제 가능성</li></ul>
+
+      <h4>Reproduction Steps</h4>
+      <ul><li>Unity에서 해당 씬을 실행한다.</li><li>스크린샷과 동일한 위치로 플레이어를 이동한다.</li><li>Game View에서 문제 영역을 확인한다.</li><li>Scene View에서 Collider, Canvas, Camera, NavMesh 상태를 비교한다.</li><li>동일 조건에서 문제가 반복 재현되는지 확인한다.</li></ul>
+
+      <h4>Fix Suggestions</h4>
+      <ul><li>Collider, Rigidbody, Character Controller 설정을 확인한다.</li><li>Layer Collision Matrix와 Is Trigger 설정을 점검한다.</li></ul>
+    </article>
+  
+    <article class="bug-card">
+      <h3>BUG-010 · UI 오류
+        <span class="badge minor">Minor</span>
+      </h3>
+      <p class="muted"><b>Source:</b> test_missing_texture_05.png · <b>Confidence:</b> 0.85</p>
+      <p>The health bar overlaps with the minimap.</p>
+
+      <h4>Root Cause Candidates</h4>
+      <ul><li>UI Canvas의 Anchor, Pivot, RectTransform 설정 오류 가능성</li><li>Canvas Scaler 또는 Sorting Order 설정 문제 가능성</li></ul>
+
+      <h4>Reproduction Steps</h4>
+      <ul><li>Unity에서 해당 씬을 실행한다.</li><li>스크린샷과 동일한 위치로 플레이어를 이동한다.</li><li>Game View에서 문제 영역을 확인한다.</li><li>Scene View에서 Collider, Canvas, Camera, NavMesh 상태를 비교한다.</li><li>동일 조건에서 문제가 반복 재현되는지 확인한다.</li></ul>
+
+      <h4>Fix Suggestions</h4>
+      <ul><li>Canvas Scaler, Anchor, Pivot, RectTransform, Sorting Order를 확인한다.</li><li>여러 해상도에서 UI Safe Area와 겹침 여부를 테스트한다.</li></ul>
+    </article>
+  
+    <article class="bug-card">
+      <h3>BUG-011 · 미니맵 불일치
+        <span class="badge major">Major</span>
+      </h3>
+      <p class="muted"><b>Source:</b> test_missing_texture_05.png · <b>Confidence:</b> 0.9</p>
+      <p>Minimap does not show the correct player position.</p>
+
+      <h4>Root Cause Candidates</h4>
+      <ul><li>Minimap Camera가 Player Transform을 정확히 추적하지 못하는 문제 가능성</li><li>월드 좌표와 미니맵 좌표 변환 로직 오류 가능성</li></ul>
+
+      <h4>Reproduction Steps</h4>
+      <ul><li>Unity에서 해당 씬을 실행한다.</li><li>스크린샷과 동일한 위치로 플레이어를 이동한다.</li><li>Game View에서 문제 영역을 확인한다.</li><li>Scene View에서 Collider, Canvas, Camera, NavMesh 상태를 비교한다.</li><li>동일 조건에서 문제가 반복 재현되는지 확인한다.</li></ul>
+
+      <h4>Fix Suggestions</h4>
+      <ul><li>Minimap Camera target이 Player Transform을 정확히 추적하는지 확인한다.</li><li>월드 좌표를 미니맵 좌표로 변환하는 스크립트를 점검한다.</li></ul>
+    </article>
+  
+    <article class="bug-card">
+      <h3>BUG-012 · 렌더링 이상
+        <span class="badge minor">Minor</span>
+      </h3>
+      <p class="muted"><b>Source:</b> test_missing_texture_05.png · <b>Confidence:</b> 0.75</p>
+      <p>Flickering textures on the terrain.</p>
+
+      <h4>Root Cause Candidates</h4>
+      <ul><li>Z-fighting 또는 중복 메시 문제 가능성</li><li>Shader, Material, Shadow Quality 설정 문제 가능성</li></ul>
+
+      <h4>Reproduction Steps</h4>
+      <ul><li>Unity에서 해당 씬을 실행한다.</li><li>스크린샷과 동일한 위치로 플레이어를 이동한다.</li><li>Game View에서 문제 영역을 확인한다.</li><li>Scene View에서 Collider, Canvas, Camera, NavMesh 상태를 비교한다.</li><li>동일 조건에서 문제가 반복 재현되는지 확인한다.</li></ul>
+
+      <h4>Fix Suggestions</h4>
+      <ul><li>Material, Shader, Shadow Quality, Z-fighting 여부를 확인한다.</li><li>겹친 메시 또는 중복 지형 오브젝트를 제거한다.</li></ul>
+    </article>
+  
+    <article class="bug-card">
+      <h3>BUG-013 · 충돌 판정
+        <span class="badge minor">Minor</span>
+      </h3>
+      <p class="muted"><b>Source:</b> test_missing_texture_05.png · <b>Confidence:</b> 0.8</p>
+      <p>Player character passes through a wall.</p>
+
+      <h4>Root Cause Candidates</h4>
+      <ul><li>Collider 또는 Rigidbody 설정 누락 가능성</li><li>Layer Collision Matrix 설정 문제 가능성</li></ul>
+
+      <h4>Reproduction Steps</h4>
+      <ul><li>Unity에서 해당 씬을 실행한다.</li><li>스크린샷과 동일한 위치로 플레이어를 이동한다.</li><li>Game View에서 문제 영역을 확인한다.</li><li>Scene View에서 Collider, Canvas, Camera, NavMesh 상태를 비교한다.</li><li>동일 조건에서 문제가 반복 재현되는지 확인한다.</li></ul>
+
+      <h4>Fix Suggestions</h4>
+      <ul><li>Collider, Rigidbody, Character Controller 설정을 확인한다.</li><li>Layer Collision Matrix와 Is Trigger 설정을 점검한다.</li></ul>
+    </article>
+  
+    <article class="bug-card">
+      <h3>BUG-014 · UI 오류
+        <span class="badge minor">Minor</span>
+      </h3>
+      <p class="muted"><b>Source:</b> test_npc_stacking_06.png · <b>Confidence:</b> 0.85</p>
+      <p>The health bar overlaps with the minimap in the top right corner.</p>
+
+      <h4>Root Cause Candidates</h4>
+      <ul><li>UI Canvas의 Anchor, Pivot, RectTransform 설정 오류 가능성</li><li>Canvas Scaler 또는 Sorting Order 설정 문제 가능성</li></ul>
+
+      <h4>Reproduction Steps</h4>
+      <ul><li>Unity에서 해당 씬을 실행한다.</li><li>스크린샷과 동일한 위치로 플레이어를 이동한다.</li><li>Game View에서 문제 영역을 확인한다.</li><li>Scene View에서 Collider, Canvas, Camera, NavMesh 상태를 비교한다.</li><li>동일 조건에서 문제가 반복 재현되는지 확인한다.</li></ul>
+
+      <h4>Fix Suggestions</h4>
+      <ul><li>Canvas Scaler, Anchor, Pivot, RectTransform, Sorting Order를 확인한다.</li><li>여러 해상도에서 UI Safe Area와 겹침 여부를 테스트한다.</li></ul>
+    </article>
+  
+    <article class="bug-card">
+      <h3>BUG-015 · 충돌 판정
+        <span class="badge major">Major</span>
+      </h3>
+      <p class="muted"><b>Source:</b> test_npc_stacking_06.png · <b>Confidence:</b> 0.9</p>
+      <p>Character model partially clips through the wall.</p>
+
+      <h4>Root Cause Candidates</h4>
+      <ul><li>Collider 또는 Rigidbody 설정 누락 가능성</li><li>Layer Collision Matrix 설정 문제 가능성</li></ul>
+
+      <h4>Reproduction Steps</h4>
+      <ul><li>Unity에서 해당 씬을 실행한다.</li><li>스크린샷과 동일한 위치로 플레이어를 이동한다.</li><li>Game View에서 문제 영역을 확인한다.</li><li>Scene View에서 Collider, Canvas, Camera, NavMesh 상태를 비교한다.</li><li>동일 조건에서 문제가 반복 재현되는지 확인한다.</li></ul>
+
+      <h4>Fix Suggestions</h4>
+      <ul><li>Collider, Rigidbody, Character Controller 설정을 확인한다.</li><li>Layer Collision Matrix와 Is Trigger 설정을 점검한다.</li></ul>
+    </article>
+  
+    <article class="bug-card">
+      <h3>BUG-016 · 오브젝트 겹침
+        <span class="badge minor">Minor</span>
+      </h3>
+      <p class="muted"><b>Source:</b> test_npc_stacking_06.png · <b>Confidence:</b> 0.75</p>
+      <p>Strange flickering on the terrain in the background.</p>
+
+      <h4>Root Cause Candidates</h4>
+      <ul><li>Collider bounds와 Mesh Renderer 위치 불일치 가능성</li><li>오브젝트 배치 좌표 또는 스케일 설정 오류 가능성</li></ul>
+
+      <h4>Reproduction Steps</h4>
+      <ul><li>Unity에서 해당 씬을 실행한다.</li><li>스크린샷과 동일한 위치로 플레이어를 이동한다.</li><li>Game View에서 문제 영역을 확인한다.</li><li>Scene View에서 Collider, Canvas, Camera, NavMesh 상태를 비교한다.</li><li>동일 조건에서 문제가 반복 재현되는지 확인한다.</li></ul>
+
+      <h4>Fix Suggestions</h4>
+      <ul><li>Collider 크기와 Mesh Renderer 위치를 비교한다.</li><li>Scene View에서 오브젝트 배치와 충돌 영역을 확인한다.</li></ul>
+    </article>
+  
+    <article class="bug-card">
+      <h3>BUG-017 · 충돌 판정
+        <span class="badge major">Major</span>
+      </h3>
+      <p class="muted"><b>Source:</b> test_npc_stacking_06.png · <b>Confidence:</b> 0.8</p>
+      <p>Player can walk through certain objects that should be solid.</p>
+
+      <h4>Root Cause Candidates</h4>
+      <ul><li>Collider 또는 Rigidbody 설정 누락 가능성</li><li>Layer Collision Matrix 설정 문제 가능성</li></ul>
+
+      <h4>Reproduction Steps</h4>
+      <ul><li>Unity에서 해당 씬을 실행한다.</li><li>스크린샷과 동일한 위치로 플레이어를 이동한다.</li><li>Game View에서 문제 영역을 확인한다.</li><li>Scene View에서 Collider, Canvas, Camera, NavMesh 상태를 비교한다.</li><li>동일 조건에서 문제가 반복 재현되는지 확인한다.</li></ul>
+
+      <h4>Fix Suggestions</h4>
+      <ul><li>Collider, Rigidbody, Character Controller 설정을 확인한다.</li><li>Layer Collision Matrix와 Is Trigger 설정을 점검한다.</li></ul>
+    </article>
+  
+    <article class="bug-card">
+      <h3>BUG-018 · UI 오류
+        <span class="badge minor">Minor</span>
+      </h3>
+      <p class="muted"><b>Source:</b> test_object_clipping_02.png · <b>Confidence:</b> 0.85</p>
+      <p>The health bar overlaps with the minimap.</p>
+
+      <h4>Root Cause Candidates</h4>
+      <ul><li>UI Canvas의 Anchor, Pivot, RectTransform 설정 오류 가능성</li><li>Canvas Scaler 또는 Sorting Order 설정 문제 가능성</li></ul>
+
+      <h4>Reproduction Steps</h4>
+      <ul><li>Unity에서 해당 씬을 실행한다.</li><li>스크린샷과 동일한 위치로 플레이어를 이동한다.</li><li>Game View에서 문제 영역을 확인한다.</li><li>Scene View에서 Collider, Canvas, Camera, NavMesh 상태를 비교한다.</li><li>동일 조건에서 문제가 반복 재현되는지 확인한다.</li></ul>
+
+      <h4>Fix Suggestions</h4>
+      <ul><li>Canvas Scaler, Anchor, Pivot, RectTransform, Sorting Order를 확인한다.</li><li>여러 해상도에서 UI Safe Area와 겹침 여부를 테스트한다.</li></ul>
+    </article>
+  
+    <article class="bug-card">
+      <h3>BUG-019 · 충돌 판정
+        <span class="badge major">Major</span>
+      </h3>
+      <p class="muted"><b>Source:</b> test_object_clipping_02.png · <b>Confidence:</b> 0.9</p>
+      <p>Character model partially clipping through the wall.</p>
+
+      <h4>Root Cause Candidates</h4>
+      <ul><li>Collider 또는 Rigidbody 설정 누락 가능성</li><li>Layer Collision Matrix 설정 문제 가능성</li></ul>
+
+      <h4>Reproduction Steps</h4>
+      <ul><li>Unity에서 해당 씬을 실행한다.</li><li>스크린샷과 동일한 위치로 플레이어를 이동한다.</li><li>Game View에서 문제 영역을 확인한다.</li><li>Scene View에서 Collider, Canvas, Camera, NavMesh 상태를 비교한다.</li><li>동일 조건에서 문제가 반복 재현되는지 확인한다.</li></ul>
+
+      <h4>Fix Suggestions</h4>
+      <ul><li>Collider, Rigidbody, Character Controller 설정을 확인한다.</li><li>Layer Collision Matrix와 Is Trigger 설정을 점검한다.</li></ul>
+    </article>
+  
+    <article class="bug-card">
+      <h3>BUG-020 · 미니맵 불일치
+        <span class="badge major">Major</span>
+      </h3>
+      <p class="muted"><b>Source:</b> test_object_clipping_02.png · <b>Confidence:</b> 0.75</p>
+      <p>Minimap does not accurately reflect player position.</p>
+
+      <h4>Root Cause Candidates</h4>
+      <ul><li>Minimap Camera가 Player Transform을 정확히 추적하지 못하는 문제 가능성</li><li>월드 좌표와 미니맵 좌표 변환 로직 오류 가능성</li></ul>
+
+      <h4>Reproduction Steps</h4>
+      <ul><li>Unity에서 해당 씬을 실행한다.</li><li>스크린샷과 동일한 위치로 플레이어를 이동한다.</li><li>Game View에서 문제 영역을 확인한다.</li><li>Scene View에서 Collider, Canvas, Camera, NavMesh 상태를 비교한다.</li><li>동일 조건에서 문제가 반복 재현되는지 확인한다.</li></ul>
+
+      <h4>Fix Suggestions</h4>
+      <ul><li>Minimap Camera target이 Player Transform을 정확히 추적하는지 확인한다.</li><li>월드 좌표를 미니맵 좌표로 변환하는 스크립트를 점검한다.</li></ul>
+    </article>
+  
+    <article class="bug-card">
+      <h3>BUG-021 · UI 오류
+        <span class="badge minor">Minor</span>
+      </h3>
+      <p class="muted"><b>Source:</b> test_pathfinding_issue_07.png · <b>Confidence:</b> 0.8</p>
+      <p>Health bar overlaps with inventory UI.</p>
+
+      <h4>Root Cause Candidates</h4>
+      <ul><li>UI Canvas의 Anchor, Pivot, RectTransform 설정 오류 가능성</li><li>Canvas Scaler 또는 Sorting Order 설정 문제 가능성</li></ul>
+
+      <h4>Reproduction Steps</h4>
+      <ul><li>Unity에서 해당 씬을 실행한다.</li><li>스크린샷과 동일한 위치로 플레이어를 이동한다.</li><li>Game View에서 문제 영역을 확인한다.</li><li>Scene View에서 Collider, Canvas, Camera, NavMesh 상태를 비교한다.</li><li>동일 조건에서 문제가 반복 재현되는지 확인한다.</li></ul>
+
+      <h4>Fix Suggestions</h4>
+      <ul><li>Canvas Scaler, Anchor, Pivot, RectTransform, Sorting Order를 확인한다.</li><li>여러 해상도에서 UI Safe Area와 겹침 여부를 테스트한다.</li></ul>
+    </article>
+  
+    <article class="bug-card">
+      <h3>BUG-022 · 미니맵 불일치
+        <span class="badge major">Major</span>
+      </h3>
+      <p class="muted"><b>Source:</b> test_pathfinding_issue_07.png · <b>Confidence:</b> 0.9</p>
+      <p>Minimap does not reflect the player's current position accurately.</p>
+
+      <h4>Root Cause Candidates</h4>
+      <ul><li>Minimap Camera가 Player Transform을 정확히 추적하지 못하는 문제 가능성</li><li>월드 좌표와 미니맵 좌표 변환 로직 오류 가능성</li></ul>
+
+      <h4>Reproduction Steps</h4>
+      <ul><li>Unity에서 해당 씬을 실행한다.</li><li>스크린샷과 동일한 위치로 플레이어를 이동한다.</li><li>Game View에서 문제 영역을 확인한다.</li><li>Scene View에서 Collider, Canvas, Camera, NavMesh 상태를 비교한다.</li><li>동일 조건에서 문제가 반복 재현되는지 확인한다.</li></ul>
+
+      <h4>Fix Suggestions</h4>
+      <ul><li>Minimap Camera target이 Player Transform을 정확히 추적하는지 확인한다.</li><li>월드 좌표를 미니맵 좌표로 변환하는 스크립트를 점검한다.</li></ul>
+    </article>
+  
+    <article class="bug-card">
+      <h3>BUG-023 · 렌더링 이상
+        <span class="badge minor">Minor</span>
+      </h3>
+      <p class="muted"><b>Source:</b> test_pathfinding_issue_07.png · <b>Confidence:</b> 0.75</p>
+      <p>Flickering textures on the terrain.</p>
+
+      <h4>Root Cause Candidates</h4>
+      <ul><li>Z-fighting 또는 중복 메시 문제 가능성</li><li>Shader, Material, Shadow Quality 설정 문제 가능성</li></ul>
+
+      <h4>Reproduction Steps</h4>
+      <ul><li>Unity에서 해당 씬을 실행한다.</li><li>스크린샷과 동일한 위치로 플레이어를 이동한다.</li><li>Game View에서 문제 영역을 확인한다.</li><li>Scene View에서 Collider, Canvas, Camera, NavMesh 상태를 비교한다.</li><li>동일 조건에서 문제가 반복 재현되는지 확인한다.</li></ul>
+
+      <h4>Fix Suggestions</h4>
+      <ul><li>Material, Shader, Shadow Quality, Z-fighting 여부를 확인한다.</li><li>겹친 메시 또는 중복 지형 오브젝트를 제거한다.</li></ul>
+    </article>
+  
+    <article class="bug-card">
+      <h3>BUG-024 · 충돌 판정
+        <span class="badge major">Major</span>
+      </h3>
+      <p class="muted"><b>Source:</b> test_pathfinding_issue_07.png · <b>Confidence:</b> 0.65</p>
+      <p>Two NPCs are overlapping in the center of the screen.</p>
+
+      <h4>Root Cause Candidates</h4>
+      <ul><li>Collider 또는 Rigidbody 설정 누락 가능성</li><li>Layer Collision Matrix 설정 문제 가능성</li></ul>
+
+      <h4>Reproduction Steps</h4>
+      <ul><li>Unity에서 해당 씬을 실행한다.</li><li>스크린샷과 동일한 위치로 플레이어를 이동한다.</li><li>Game View에서 문제 영역을 확인한다.</li><li>Scene View에서 Collider, Canvas, Camera, NavMesh 상태를 비교한다.</li><li>동일 조건에서 문제가 반복 재현되는지 확인한다.</li></ul>
+
+      <h4>Fix Suggestions</h4>
+      <ul><li>Collider, Rigidbody, Character Controller 설정을 확인한다.</li><li>Layer Collision Matrix와 Is Trigger 설정을 점검한다.</li></ul>
+    </article>
+  
+    <article class="bug-card">
+      <h3>BUG-025 · UI 오류
+        <span class="badge minor">Minor</span>
+      </h3>
+      <p class="muted"><b>Source:</b> test_rendering_artifact_04.png · <b>Confidence:</b> 0.85</p>
+      <p>The health bar overlaps with the minimap.</p>
+
+      <h4>Root Cause Candidates</h4>
+      <ul><li>UI Canvas의 Anchor, Pivot, RectTransform 설정 오류 가능성</li><li>Canvas Scaler 또는 Sorting Order 설정 문제 가능성</li></ul>
+
+      <h4>Reproduction Steps</h4>
+      <ul><li>Unity에서 해당 씬을 실행한다.</li><li>스크린샷과 동일한 위치로 플레이어를 이동한다.</li><li>Game View에서 문제 영역을 확인한다.</li><li>Scene View에서 Collider, Canvas, Camera, NavMesh 상태를 비교한다.</li><li>동일 조건에서 문제가 반복 재현되는지 확인한다.</li></ul>
+
+      <h4>Fix Suggestions</h4>
+      <ul><li>Canvas Scaler, Anchor, Pivot, RectTransform, Sorting Order를 확인한다.</li><li>여러 해상도에서 UI Safe Area와 겹침 여부를 테스트한다.</li></ul>
+    </article>
+  
+    <article class="bug-card">
+      <h3>BUG-026 · 충돌 판정
+        <span class="badge major">Major</span>
+      </h3>
+      <p class="muted"><b>Source:</b> test_rendering_artifact_04.png · <b>Confidence:</b> 0.9</p>
+      <p>Character model partially clips through the wall.</p>
+
+      <h4>Root Cause Candidates</h4>
+      <ul><li>Collider 또는 Rigidbody 설정 누락 가능성</li><li>Layer Collision Matrix 설정 문제 가능성</li></ul>
+
+      <h4>Reproduction Steps</h4>
+      <ul><li>Unity에서 해당 씬을 실행한다.</li><li>스크린샷과 동일한 위치로 플레이어를 이동한다.</li><li>Game View에서 문제 영역을 확인한다.</li><li>Scene View에서 Collider, Canvas, Camera, NavMesh 상태를 비교한다.</li><li>동일 조건에서 문제가 반복 재현되는지 확인한다.</li></ul>
+
+      <h4>Fix Suggestions</h4>
+      <ul><li>Collider, Rigidbody, Character Controller 설정을 확인한다.</li><li>Layer Collision Matrix와 Is Trigger 설정을 점검한다.</li></ul>
+    </article>
+  
+    <article class="bug-card">
+      <h3>BUG-027 · UI 오류
+        <span class="badge minor">Minor</span>
+      </h3>
+      <p class="muted"><b>Source:</b> test_ui_cutoff_09.png · <b>Confidence:</b> 0.85</p>
+      <p>The health bar overlaps with the minimap, making it hard to read both elements.</p>
+
+      <h4>Root Cause Candidates</h4>
+      <ul><li>UI Canvas의 Anchor, Pivot, RectTransform 설정 오류 가능성</li><li>Canvas Scaler 또는 Sorting Order 설정 문제 가능성</li></ul>
+
+      <h4>Reproduction Steps</h4>
+      <ul><li>Unity에서 해당 씬을 실행한다.</li><li>스크린샷과 동일한 위치로 플레이어를 이동한다.</li><li>Game View에서 문제 영역을 확인한다.</li><li>Scene View에서 Collider, Canvas, Camera, NavMesh 상태를 비교한다.</li><li>동일 조건에서 문제가 반복 재현되는지 확인한다.</li></ul>
+
+      <h4>Fix Suggestions</h4>
+      <ul><li>Canvas Scaler, Anchor, Pivot, RectTransform, Sorting Order를 확인한다.</li><li>여러 해상도에서 UI Safe Area와 겹침 여부를 테스트한다.</li></ul>
+    </article>
+  
+    <article class="bug-card">
+      <h3>BUG-028 · 충돌 판정
+        <span class="badge major">Major</span>
+      </h3>
+      <p class="muted"><b>Source:</b> test_ui_cutoff_09.png · <b>Confidence:</b> 0.9</p>
+      <p>The character model is partially clipping through a wall.</p>
+
+      <h4>Root Cause Candidates</h4>
+      <ul><li>Collider 또는 Rigidbody 설정 누락 가능성</li><li>Layer Collision Matrix 설정 문제 가능성</li></ul>
+
+      <h4>Reproduction Steps</h4>
+      <ul><li>Unity에서 해당 씬을 실행한다.</li><li>스크린샷과 동일한 위치로 플레이어를 이동한다.</li><li>Game View에서 문제 영역을 확인한다.</li><li>Scene View에서 Collider, Canvas, Camera, NavMesh 상태를 비교한다.</li><li>동일 조건에서 문제가 반복 재현되는지 확인한다.</li></ul>
+
+      <h4>Fix Suggestions</h4>
+      <ul><li>Collider, Rigidbody, Character Controller 설정을 확인한다.</li><li>Layer Collision Matrix와 Is Trigger 설정을 점검한다.</li></ul>
+    </article>
+  
+    <article class="bug-card">
+      <h3>BUG-029 · UI 오류
+        <span class="badge minor">Minor</span>
+      </h3>
+      <p class="muted"><b>Source:</b> test_ui_overlap_01.png · <b>Confidence:</b> 0.85</p>
+      <p>The health bar overlaps with the inventory icon.</p>
+
+      <h4>Root Cause Candidates</h4>
+      <ul><li>UI Canvas의 Anchor, Pivot, RectTransform 설정 오류 가능성</li><li>Canvas Scaler 또는 Sorting Order 설정 문제 가능성</li></ul>
+
+      <h4>Reproduction Steps</h4>
+      <ul><li>Unity에서 해당 씬을 실행한다.</li><li>스크린샷과 동일한 위치로 플레이어를 이동한다.</li><li>Game View에서 문제 영역을 확인한다.</li><li>Scene View에서 Collider, Canvas, Camera, NavMesh 상태를 비교한다.</li><li>동일 조건에서 문제가 반복 재현되는지 확인한다.</li></ul>
+
+      <h4>Fix Suggestions</h4>
+      <ul><li>Canvas Scaler, Anchor, Pivot, RectTransform, Sorting Order를 확인한다.</li><li>여러 해상도에서 UI Safe Area와 겹침 여부를 테스트한다.</li></ul>
+    </article>
+  
+    <article class="bug-card">
+      <h3>BUG-030 · 충돌 판정
+        <span class="badge major">Major</span>
+      </h3>
+      <p class="muted"><b>Source:</b> test_ui_overlap_01.png · <b>Confidence:</b> 0.9</p>
+      <p>Character's arm clips through the wall when standing close.</p>
+
+      <h4>Root Cause Candidates</h4>
+      <ul><li>Collider 또는 Rigidbody 설정 누락 가능성</li><li>Layer Collision Matrix 설정 문제 가능성</li></ul>
+
+      <h4>Reproduction Steps</h4>
+      <ul><li>Unity에서 해당 씬을 실행한다.</li><li>스크린샷과 동일한 위치로 플레이어를 이동한다.</li><li>Game View에서 문제 영역을 확인한다.</li><li>Scene View에서 Collider, Canvas, Camera, NavMesh 상태를 비교한다.</li><li>동일 조건에서 문제가 반복 재현되는지 확인한다.</li></ul>
+
+      <h4>Fix Suggestions</h4>
+      <ul><li>Collider, Rigidbody, Character Controller 설정을 확인한다.</li><li>Layer Collision Matrix와 Is Trigger 설정을 점검한다.</li></ul>
+    </article>
+  
+    <article class="bug-card">
+      <h3>BUG-031 · 렌더링 이상
+        <span class="badge minor">Minor</span>
+      </h3>
+      <p class="muted"><b>Source:</b> test_ui_overlap_01.png · <b>Confidence:</b> 0.75</p>
+      <p>Flickering textures on the ground in certain lighting conditions.</p>
 
       <h4>Root Cause Candidates</h4>
       <ul><li>Z-fighting 또는 중복 메시 문제 가능성</li><li>Shader, Material, Shadow Quality 설정 문제 가능성</li></ul>
@@ -667,11 +1559,11 @@ body {
     <h2>Agent Team Results</h2>
     <div class="agent-grid">
       
-        <div class="agent-card"><strong>qaLeadAgent</strong>Vision 분석 결과를 통합하여 8개의 주요 버그 후보를 우선순위화했다.</div>
+        <div class="agent-card"><strong>qaLeadAgent</strong>Vision 분석 결과를 통합하여 31개의 주요 버그 후보를 우선순위화했다.</div>
       
-        <div class="agent-card"><strong>visualBugDetectorAgent</strong>실제 스크린샷 3장을 분석하여 UI, 오브젝트, 미니맵, 렌더링 관련 후보를 감지했다.</div>
+        <div class="agent-card"><strong>visualBugDetectorAgent</strong>실제 스크린샷 10장을 분석하여 UI, 오브젝트, 미니맵, 렌더링 관련 후보를 감지했다.</div>
       
-        <div class="agent-card"><strong>bugClassifierAgent</strong>Vision 결과를 kyucode 표준 분류(UI 오류, 충돌 판정, 미니맵 불일치, 렌더링 이상)로 정규화했다.</div>
+        <div class="agent-card"><strong>bugClassifierAgent</strong>Vision 결과를 kyucode 표준 분류(UI 오류, 미니맵 불일치, 렌더링 이상, 충돌 판정, 오브젝트 겹침)로 정규화했다.</div>
       
         <div class="agent-card"><strong>reproductionAgent</strong>각 detectedBug에 대해 Unity 실행, 위치 이동, Game View/Scene View 비교, 반복 재현 확인 절차를 생성했다.</div>
       
