@@ -1,70 +1,443 @@
 {
   "projectName": "kyucode",
   "engine": "Unity",
-  "mode": "mock",
-  "summary": "Mock analysis completed successfully.",
-  "inputData": {
-    "bugReport": "### Sample Bug Report\n**Title:** NPC Pathfinding Issue\n\n**Description:**\nThe NPC continually rotates in place near the fountain instead of proceeding to its destination. There is a potential issue with pathfinding logic that may cause this behavior.\n\n**Observations:**\n- There appears to be a discrepancy in the minimap coordinates.\n- The NPC overlaps with the object next to the fountain.",
-    "imageMetadata": [
-      {
-        "filename": "screenshot1.png",
-        "description": "UI layout in main menu"
-      },
-      {
-        "filename": "screenshot2.png",
-        "description": "Character movement in gameplay"
-      },
-      {
-        "filename": "screenshot3.png",
-        "description": "In-game environment with NPCs"
-      },
-      {
-        "filename": "screenshot4.png",
-        "description": "Scene at the fountain"
-      },
-      {
-        "filename": "screenshot5.png",
-        "description": "Close-up of enemy character"
-      },
-      {
-        "filename": "screenshot6.png",
-        "description": "Map view with various landmarks"
-      },
-      {
-        "filename": "screenshot7.png",
-        "description": "Player's inventory screen"
-      },
-      {
-        "filename": "screenshot8.png",
-        "description": "Settings menu overview"
-      },
-      {
-        "filename": "screenshot9.png",
-        "description": "HUD during gameplay"
-      },
-      {
-        "filename": "screenshot10.png",
-        "description": "Cutscene showing character dialogue"
-      }
-    ]
-  },
+  "mode": "vision",
+  "imageAnalysisResults": [
+    {
+      "imageFile": "bug_minimap_mismatch_01.png",
+      "visibleBugCandidates": [
+        {
+          "type": "UI 오류",
+          "isDetected": true,
+          "severity": "Major",
+          "confidence": 0.85,
+          "visualEvidence": "The health bar overlaps with the score display.",
+          "possibleUnityCause": "Incorrect UI canvas sorting order or layout settings.",
+          "suggestedFixDirection": "Adjust the canvas hierarchy or reposition the UI elements.",
+          "label": "UI 오류",
+          "bbox": {
+            "x": 0.76,
+            "y": 0.04,
+            "w": 0.2,
+            "h": 0.22
+          }
+        },
+        {
+          "type": "충돌 판정",
+          "isDetected": true,
+          "severity": "Major",
+          "confidence": 0.9,
+          "visualEvidence": "Character model partially intersects with the environment.",
+          "possibleUnityCause": "Improper collider setup or incorrect object placement.",
+          "suggestedFixDirection": "Check and adjust the colliders or reposition the character model.",
+          "label": "충돌 판정",
+          "bbox": {
+            "x": 0.76,
+            "y": 0.04,
+            "w": 0.2,
+            "h": 0.22
+          }
+        },
+        {
+          "type": "미니맵 불일치",
+          "isDetected": false,
+          "severity": "Major",
+          "confidence": 0.6,
+          "visualEvidence": "Minimap shows different terrain than the actual game view.",
+          "possibleUnityCause": "Minimap not updating correctly with the level geometry.",
+          "suggestedFixDirection": "Ensure the minimap camera is correctly configured to capture the level.",
+          "label": "미니맵 불일치",
+          "bbox": {
+            "x": 0.76,
+            "y": 0.04,
+            "w": 0.2,
+            "h": 0.22
+          }
+        }
+      ],
+      "primaryBugType": "충돌 판정",
+      "severityEstimate": "Major",
+      "overallConfidence": 0.78,
+      "summary": "The screenshot reveals multiple issues, primarily object clipping and UI overlap, which could affect gameplay experience. The minimap mismatch is noted but not detected."
+    },
+    {
+      "imageFile": "bug_object_clipping_01.png",
+      "visibleBugCandidates": [
+        {
+          "type": "UI 오류",
+          "isDetected": true,
+          "severity": "Major",
+          "confidence": 0.85,
+          "visualEvidence": "Health bar overlaps with the inventory UI.",
+          "possibleUnityCause": "Incorrect canvas settings or layout group configuration.",
+          "suggestedFixDirection": "Adjust the positioning of the UI elements in the canvas.",
+          "label": "UI 오류",
+          "bbox": {
+            "x": 0.76,
+            "y": 0.04,
+            "w": 0.2,
+            "h": 0.22
+          }
+        },
+        {
+          "type": "충돌 판정",
+          "isDetected": true,
+          "severity": "Major",
+          "confidence": 0.9,
+          "visualEvidence": "Character model partially clips through the wall.",
+          "possibleUnityCause": "Incorrect collider settings or object placement.",
+          "suggestedFixDirection": "Check and adjust the collider bounds of the character and wall.",
+          "label": "충돌 판정",
+          "bbox": {
+            "x": 0.76,
+            "y": 0.04,
+            "w": 0.2,
+            "h": 0.22
+          }
+        },
+        {
+          "type": "미니맵 불일치",
+          "isDetected": false,
+          "severity": "Major",
+          "confidence": 0.6,
+          "visualEvidence": "Minimap does not accurately reflect player position.",
+          "possibleUnityCause": "Incorrect player transform updates to minimap.",
+          "suggestedFixDirection": "Ensure player position updates are correctly linked to the minimap.",
+          "label": "미니맵 불일치",
+          "bbox": {
+            "x": 0.76,
+            "y": 0.04,
+            "w": 0.2,
+            "h": 0.22
+          }
+        }
+      ],
+      "primaryBugType": "충돌 판정",
+      "severityEstimate": "Major",
+      "overallConfidence": 0.78,
+      "summary": "The screenshot reveals multiple issues, primarily object clipping and UI overlap, which could affect gameplay experience. Further investigation is needed to confirm the minimap mismatch."
+    },
+    {
+      "imageFile": "bug_ui_overlap_01.png",
+      "visibleBugCandidates": [
+        {
+          "type": "UI 오류",
+          "isDetected": true,
+          "severity": "Major",
+          "confidence": 0.85,
+          "visualEvidence": "The health bar overlaps with the inventory UI.",
+          "possibleUnityCause": "Incorrect canvas settings or layout group configurations.",
+          "suggestedFixDirection": "Adjust the RectTransform settings of the UI elements to prevent overlap.",
+          "label": "UI 오류",
+          "bbox": {
+            "x": 0.76,
+            "y": 0.04,
+            "w": 0.2,
+            "h": 0.22
+          }
+        },
+        {
+          "type": "충돌 판정",
+          "isDetected": true,
+          "severity": "Major",
+          "confidence": 0.9,
+          "visualEvidence": "Character model partially clips through the wall object.",
+          "possibleUnityCause": "Improper collision settings or mesh collider configuration.",
+          "suggestedFixDirection": "Review and adjust the collider settings on the character and wall objects.",
+          "label": "충돌 판정",
+          "bbox": {
+            "x": 0.76,
+            "y": 0.04,
+            "w": 0.2,
+            "h": 0.22
+          }
+        },
+        {
+          "type": "미니맵 불일치",
+          "isDetected": true,
+          "severity": "Major",
+          "confidence": 0.7,
+          "visualEvidence": "Minimap shows player at a different location than in the main view.",
+          "possibleUnityCause": "Incorrect player position tracking for minimap.",
+          "suggestedFixDirection": "Ensure that the minimap camera is correctly tracking the player's position.",
+          "label": "미니맵 불일치",
+          "bbox": {
+            "x": 0.76,
+            "y": 0.04,
+            "w": 0.2,
+            "h": 0.22
+          }
+        },
+        {
+          "type": "렌더링 이상",
+          "isDetected": true,
+          "severity": "Major",
+          "confidence": 0.75,
+          "visualEvidence": "Strange flickering on the edges of the terrain.",
+          "possibleUnityCause": "Z-fighting due to overlapping geometry.",
+          "suggestedFixDirection": "Adjust the positions of the overlapping objects or tweak the materials to prevent z-fighting.",
+          "label": "렌더링 이상",
+          "bbox": {
+            "x": 0.76,
+            "y": 0.04,
+            "w": 0.2,
+            "h": 0.22
+          }
+        }
+      ],
+      "primaryBugType": "충돌 판정",
+      "severityEstimate": "Major",
+      "overallConfidence": 0.8,
+      "summary": "The screenshot reveals multiple bug candidates including UI overlap, object clipping, minimap mismatch, and rendering artifacts. The most critical issue is the object clipping, which significantly affects gameplay."
+    }
+  ],
   "detectedBugs": [
     {
-      "bugType": "Pathfinding",
+      "bugId": "BUG-001",
+      "sourceImage": "bug_minimap_mismatch_01.png",
+      "bugType": "UI 오류",
       "severity": "Major",
-      "confidence": 0.9,
+      "confidence": 0.85,
+      "summary": "The health bar overlaps with the score display.",
       "rootCauseCandidates": [
-        "NavMesh issue",
-        "Collider settings"
+        "UI Canvas의 Anchor, Pivot, RectTransform 설정 오류 가능성",
+        "Canvas Scaler 또는 Sorting Order 설정 문제 가능성"
       ],
       "reproductionSteps": [
-        "Step 1: Move NPC to fountain",
-        "Step 2: Observe behavior"
+        "Unity에서 해당 씬을 실행한다.",
+        "스크린샷과 동일한 위치로 플레이어를 이동한다.",
+        "Game View에서 문제 영역을 확인한다.",
+        "Scene View에서 Collider, Canvas, Camera, NavMesh 상태를 비교한다.",
+        "동일 조건에서 문제가 반복 재현되는지 확인한다."
       ],
       "fixSuggestions": [
-        "Check NavMesh settings",
-        "Inspect Collider configurations"
-      ]
+        "Canvas Scaler, Anchor, Pivot, RectTransform, Sorting Order를 확인한다.",
+        "여러 해상도에서 UI Safe Area와 겹침 여부를 테스트한다."
+      ],
+      "bbox": {
+        "x": 0.76,
+        "y": 0.04,
+        "w": 0.2,
+        "h": 0.22
+      }
+    },
+    {
+      "bugId": "BUG-002",
+      "sourceImage": "bug_minimap_mismatch_01.png",
+      "bugType": "충돌 판정",
+      "severity": "Major",
+      "confidence": 0.9,
+      "summary": "Character model partially intersects with the environment.",
+      "rootCauseCandidates": [
+        "Collider 또는 Rigidbody 설정 누락 가능성",
+        "Layer Collision Matrix 설정 문제 가능성"
+      ],
+      "reproductionSteps": [
+        "Unity에서 해당 씬을 실행한다.",
+        "스크린샷과 동일한 위치로 플레이어를 이동한다.",
+        "Game View에서 문제 영역을 확인한다.",
+        "Scene View에서 Collider, Canvas, Camera, NavMesh 상태를 비교한다.",
+        "동일 조건에서 문제가 반복 재현되는지 확인한다."
+      ],
+      "fixSuggestions": [
+        "Collider, Rigidbody, Character Controller 설정을 확인한다.",
+        "Layer Collision Matrix와 Is Trigger 설정을 점검한다."
+      ],
+      "bbox": {
+        "x": 0.76,
+        "y": 0.04,
+        "w": 0.2,
+        "h": 0.22
+      }
+    },
+    {
+      "bugId": "BUG-003",
+      "sourceImage": "bug_object_clipping_01.png",
+      "bugType": "UI 오류",
+      "severity": "Major",
+      "confidence": 0.85,
+      "summary": "Health bar overlaps with the inventory UI.",
+      "rootCauseCandidates": [
+        "UI Canvas의 Anchor, Pivot, RectTransform 설정 오류 가능성",
+        "Canvas Scaler 또는 Sorting Order 설정 문제 가능성"
+      ],
+      "reproductionSteps": [
+        "Unity에서 해당 씬을 실행한다.",
+        "스크린샷과 동일한 위치로 플레이어를 이동한다.",
+        "Game View에서 문제 영역을 확인한다.",
+        "Scene View에서 Collider, Canvas, Camera, NavMesh 상태를 비교한다.",
+        "동일 조건에서 문제가 반복 재현되는지 확인한다."
+      ],
+      "fixSuggestions": [
+        "Canvas Scaler, Anchor, Pivot, RectTransform, Sorting Order를 확인한다.",
+        "여러 해상도에서 UI Safe Area와 겹침 여부를 테스트한다."
+      ],
+      "bbox": {
+        "x": 0.76,
+        "y": 0.04,
+        "w": 0.2,
+        "h": 0.22
+      }
+    },
+    {
+      "bugId": "BUG-004",
+      "sourceImage": "bug_object_clipping_01.png",
+      "bugType": "충돌 판정",
+      "severity": "Major",
+      "confidence": 0.9,
+      "summary": "Character model partially clips through the wall.",
+      "rootCauseCandidates": [
+        "Collider 또는 Rigidbody 설정 누락 가능성",
+        "Layer Collision Matrix 설정 문제 가능성"
+      ],
+      "reproductionSteps": [
+        "Unity에서 해당 씬을 실행한다.",
+        "스크린샷과 동일한 위치로 플레이어를 이동한다.",
+        "Game View에서 문제 영역을 확인한다.",
+        "Scene View에서 Collider, Canvas, Camera, NavMesh 상태를 비교한다.",
+        "동일 조건에서 문제가 반복 재현되는지 확인한다."
+      ],
+      "fixSuggestions": [
+        "Collider, Rigidbody, Character Controller 설정을 확인한다.",
+        "Layer Collision Matrix와 Is Trigger 설정을 점검한다."
+      ],
+      "bbox": {
+        "x": 0.76,
+        "y": 0.04,
+        "w": 0.2,
+        "h": 0.22
+      }
+    },
+    {
+      "bugId": "BUG-005",
+      "sourceImage": "bug_ui_overlap_01.png",
+      "bugType": "UI 오류",
+      "severity": "Major",
+      "confidence": 0.85,
+      "summary": "The health bar overlaps with the inventory UI.",
+      "rootCauseCandidates": [
+        "UI Canvas의 Anchor, Pivot, RectTransform 설정 오류 가능성",
+        "Canvas Scaler 또는 Sorting Order 설정 문제 가능성"
+      ],
+      "reproductionSteps": [
+        "Unity에서 해당 씬을 실행한다.",
+        "스크린샷과 동일한 위치로 플레이어를 이동한다.",
+        "Game View에서 문제 영역을 확인한다.",
+        "Scene View에서 Collider, Canvas, Camera, NavMesh 상태를 비교한다.",
+        "동일 조건에서 문제가 반복 재현되는지 확인한다."
+      ],
+      "fixSuggestions": [
+        "Canvas Scaler, Anchor, Pivot, RectTransform, Sorting Order를 확인한다.",
+        "여러 해상도에서 UI Safe Area와 겹침 여부를 테스트한다."
+      ],
+      "bbox": {
+        "x": 0.76,
+        "y": 0.04,
+        "w": 0.2,
+        "h": 0.22
+      }
+    },
+    {
+      "bugId": "BUG-006",
+      "sourceImage": "bug_ui_overlap_01.png",
+      "bugType": "충돌 판정",
+      "severity": "Major",
+      "confidence": 0.9,
+      "summary": "Character model partially clips through the wall object.",
+      "rootCauseCandidates": [
+        "Collider 또는 Rigidbody 설정 누락 가능성",
+        "Layer Collision Matrix 설정 문제 가능성"
+      ],
+      "reproductionSteps": [
+        "Unity에서 해당 씬을 실행한다.",
+        "스크린샷과 동일한 위치로 플레이어를 이동한다.",
+        "Game View에서 문제 영역을 확인한다.",
+        "Scene View에서 Collider, Canvas, Camera, NavMesh 상태를 비교한다.",
+        "동일 조건에서 문제가 반복 재현되는지 확인한다."
+      ],
+      "fixSuggestions": [
+        "Collider, Rigidbody, Character Controller 설정을 확인한다.",
+        "Layer Collision Matrix와 Is Trigger 설정을 점검한다."
+      ],
+      "bbox": {
+        "x": 0.76,
+        "y": 0.04,
+        "w": 0.2,
+        "h": 0.22
+      }
+    },
+    {
+      "bugId": "BUG-007",
+      "sourceImage": "bug_ui_overlap_01.png",
+      "bugType": "미니맵 불일치",
+      "severity": "Major",
+      "confidence": 0.7,
+      "summary": "Minimap shows player at a different location than in the main view.",
+      "rootCauseCandidates": [
+        "Minimap Camera가 Player Transform을 정확히 추적하지 못하는 문제 가능성",
+        "월드 좌표와 미니맵 좌표 변환 로직 오류 가능성"
+      ],
+      "reproductionSteps": [
+        "Unity에서 해당 씬을 실행한다.",
+        "스크린샷과 동일한 위치로 플레이어를 이동한다.",
+        "Game View에서 문제 영역을 확인한다.",
+        "Scene View에서 Collider, Canvas, Camera, NavMesh 상태를 비교한다.",
+        "동일 조건에서 문제가 반복 재현되는지 확인한다."
+      ],
+      "fixSuggestions": [
+        "Minimap Camera target이 Player Transform을 정확히 추적하는지 확인한다.",
+        "월드 좌표를 미니맵 좌표로 변환하는 스크립트를 점검한다."
+      ],
+      "bbox": {
+        "x": 0.76,
+        "y": 0.04,
+        "w": 0.2,
+        "h": 0.22
+      }
+    },
+    {
+      "bugId": "BUG-008",
+      "sourceImage": "bug_ui_overlap_01.png",
+      "bugType": "렌더링 이상",
+      "severity": "Major",
+      "confidence": 0.75,
+      "summary": "Strange flickering on the edges of the terrain.",
+      "rootCauseCandidates": [
+        "Z-fighting 또는 중복 메시 문제 가능성",
+        "Shader, Material, Shadow Quality 설정 문제 가능성"
+      ],
+      "reproductionSteps": [
+        "Unity에서 해당 씬을 실행한다.",
+        "스크린샷과 동일한 위치로 플레이어를 이동한다.",
+        "Game View에서 문제 영역을 확인한다.",
+        "Scene View에서 Collider, Canvas, Camera, NavMesh 상태를 비교한다.",
+        "동일 조건에서 문제가 반복 재현되는지 확인한다."
+      ],
+      "fixSuggestions": [
+        "Material, Shader, Shadow Quality, Z-fighting 여부를 확인한다.",
+        "겹친 메시 또는 중복 지형 오브젝트를 제거한다."
+      ],
+      "bbox": {
+        "x": 0.76,
+        "y": 0.04,
+        "w": 0.2,
+        "h": 0.22
+      }
     }
+  ],
+  "agentResults": {
+    "qaLeadAgent": "Vision 분석 결과를 통합하여 8개의 주요 버그 후보를 우선순위화했다.",
+    "visualBugDetectorAgent": "실제 스크린샷 3장을 분석하여 UI, 오브젝트, 미니맵, 렌더링 관련 후보를 감지했다.",
+    "bugClassifierAgent": "Vision 결과를 kyucode 표준 분류(UI 오류, 충돌 판정, 미니맵 불일치, 렌더링 이상)로 정규화했다.",
+    "reproductionAgent": "각 detectedBug에 대해 Unity 실행, 위치 이동, Game View/Scene View 비교, 반복 재현 확인 절차를 생성했다.",
+    "fixAdvisorAgent": "Canvas, Collider, Rigidbody, Minimap Camera, Shader, NavMesh 중심의 수정 방향을 제안했다.",
+    "reportWriterAgent": "정규화된 결과를 result.json, report.md, report.html Workbench 리포트로 변환했다."
+  },
+  "futureUnityIntegration": [
+    "Unity Console / Player.log integration",
+    "GitHub Issue creation",
+    "Jira ticket export",
+    "Unity project file analysis",
+    "Regression test suggestion"
   ]
 }
