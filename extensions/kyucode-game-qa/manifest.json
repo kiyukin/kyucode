@@ -1,0 +1,17 @@
+{
+  "name": "kyucode-game-qa",
+  "displayName": "kyucode Game QA Workbench Extension",
+  "version": "0.1.0",
+  "description": "Unity game screenshot QA analysis extension for Pi",
+  "relatedSkill": ".agents/skills/kyucode-game-qa/SKILL.md",
+  "mcpServer": "src/mcp/server.js",
+  "webUi": "http://localhost:3000",
+  "commands": [
+    "start-web-ui: npm run web",
+    "start-mcp-server: npm run mcp",
+    "run-vision-analysis: node src/mcp/server.js run_vision_analysis",
+    "list-screenshots: node src/mcp/server.js list_screenshots",
+    "read-latest-report: node src/mcp/server.js read_latest_report",
+    "open-latest-report: output/report_final.html"
+  ]
+}

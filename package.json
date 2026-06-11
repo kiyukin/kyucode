@@ -1,1 +1,26 @@
-{  "name": "kyucode",  "version": "0.1.0",  "description": "AI Game QA Agent for Unity projects.",  "main": "src/index.js",  "scripts": {    "start": "node src/index.js",    "vision": "node src/vision.js",    "normalize": "node src/normalize.js",    "analyze": "node src/analyze.js",    "report": "node src/report.js",    "clean": "rimraf output/*",    "web": "node src/server.js"  },  "dependencies": {    "express": "^4.17.1",    "dotenv": "^10.0.0",    "axios": "^0.21.1",    "openai": "^3.1.0"  },  "devDependencies": {    "rimraf": "^3.0.2"  }}
+{
+  "name": "kyucode",
+  "version": "0.1.0",
+  "description": "AI Game QA Agent for Unity projects.",
+  "main": "src/index.js",
+  "scripts": {
+    "web": "node src/server.js",
+    "start": "node src/index.js",
+    "vision": "node src/vision.js",
+    "normalize": "node src/normalize.js",
+    "analyze": "node src/analyze.js",
+    "report": "node src/report.js",
+    "clean": "rimraf output/*",
+    "mcp": "node src/mcp/server.js"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "dotenv": "^10.0.0",
+    "express": "^4.22.2",
+    "multer": "^2.1.1",
+    "openai": "^3.1.0"
+  },
+  "devDependencies": {
+    "rimraf": "^3.0.2"
+  }
+}
